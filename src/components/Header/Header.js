@@ -80,21 +80,26 @@ const DesktopActionGroup = styled.div`
   }
 `;
 const SubscribeWrapper = styled.div`
-  justify-self:end;
+  
   display:none;
   @media ${QUERIES.laptopAndUp}{
-    display:flex;
-    justify-flex:end;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
+    display:revert;
+    position:relative;
+   
+    justify-self: end;
+   
   }
 `;
-const SubscribeLink= styled.a`
+const SubscribeLink = styled.a`
+position:absolute;
+
+width:100%;
+text-align:center;
 font-size:0.875rem;
 color: var(--color-gray-900);
 font-style:italic;
 text-decoration:underline;
+
 `
 const MainHeader = styled(MaxWidthWrapper)`
   display: flex;
@@ -102,12 +107,18 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: center;
   margin-top: 32px;
   margin-bottom: 48px;
+  @media ${QUERIES.tabletAndUp}{
+    margin-top:48px;
+    margin-bottom:72px;
+  }
   @media ${QUERIES.laptopAndUp}{
     display:grid;
     grid-template-columns:1fr auto 1fr;
     align-items: center;
   justify-content: revert;
   justify-items:start;
+  margin-top: 16px;
+  margin-bottom: 72px;
   }
 `;
 
